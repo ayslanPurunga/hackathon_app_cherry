@@ -19,20 +19,17 @@ class ListaDadosCarro {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Imagem.criarImagemWeb(
-                  Funcoes.corrigeLinkImagem(
-                      dados["fotoDestaque"].toString()
-                  ),
+              Imagem.criar("https://hackaton-img.s3.us-east-2.amazonaws.com/1623600155412_11917.jpeg",
                   h: 150, w:175
               ),
               Text(dados["modelo"].toString(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
-              Text(dados["marca"]["descricao"].toString() + " - " + dados["modelo"].toString(), style: TextStyle(fontSize: 20)),
-              Text(dados["anomodelo"].toString() + "/"+ dados["anofabricacao"].toString() + " " + dados["cor"]["descricao"].toString(), style: TextStyle(fontSize: 18, color: Color(0xFF57606f))),
-              Text(dados["tipo"].toString(), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-              Text(
-                _getCurrency(dados["valor"]), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
+              // Text(dados["marca"]["descricao"].toString() + " - " + dados["modelo"].toString(), style: TextStyle(fontSize: 20)),
+              // Text(dados["anomodelo"].toString() + "/"+ dados["anofabricacao"].toString() + " " + dados["cor"]["descricao"].toString(), style: TextStyle(fontSize: 18, color: Color(0xFF57606f))),
+              // Text(dados["tipo"].toString(), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              // Text(
+              //   _getCurrency(dados["valor"]), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              // ),
 
             ],
 
