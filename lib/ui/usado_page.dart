@@ -30,7 +30,7 @@ class _UsadoPageState extends State<UsadoPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Imagem.criarImagemWeb("images/", w: 300),
-                          Text("Aguarde por favor..."),
+                          Text("Aguarde por favor!"),
                         ],
                       ),
                     );
