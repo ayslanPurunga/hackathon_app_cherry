@@ -33,7 +33,7 @@ class DestaquePage extends StatelessWidget {
              ),
     );
   }
-
+  
   static String _getCurrency(value) {
     NumberFormat.simpleCurrency(locale: 'pt_BR');
     NumberFormat formatter = NumberFormat.simpleCurrency();
