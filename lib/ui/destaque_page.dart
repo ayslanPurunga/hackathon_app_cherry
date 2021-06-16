@@ -13,31 +13,25 @@ class DestaquePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: BarraTitulo.criar(dadosCarro["modelo"], iconeAcao: Icons.share),
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-                 children: [
-                    Imagem.criarImagemWeb(
-                      Funcoes.corrigeLinkImagem(dadosCarro["fotoDestaque"].toString()),
-                    ),
-                   Text(dadosCarro["modelo"].toString(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                   ),
-                   Text(dadosCarro["marca"]["descricao"].toString() + " - " + dadosCarro["modelo"].toString(), style: TextStyle(fontSize: 20)),
-                   Text(dadosCarro["anomodelo"].toString() + "/"+ dadosCarro["anofabricacao"].toString() + " " + dadosCarro["cor"]["descricao"].toString(), style: TextStyle(fontSize: 18, color: Color(0xFF57606f))),
-                   Text(dadosCarro["tipo"].toString(), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                   Text(
-                     _getCurrency(dadosCarro["valor"]), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                   ),
+        appBar: BarraTitulo.criar(dadosCarro["modelo"]),
+            body: Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Imagem.criar(dadosCarro["foto"]),
+                  Text(dadosCarro["modelo"].toString(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(dadosCarro["marca"].toString(), style: TextStyle(fontSize: 20)),
+                  Text(dadosCarro["anomodelo"].toString() + "/"+ dadosCarro["anofabricacao"].toString() + " " + dadosCarro["cor"].toString(), style: TextStyle(fontSize: 18, color: Color(0xFF57606f))),
+                  Text(dadosCarro["tipo"].toString(), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  Text(
+                    Funcoes.getCurrency(dadosCarro["valor"]), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
 
-               ],
-             ),
+                ],
+              ),
+            )
     );
   }
-  
-  static String _getCurrency(value) {
-    NumberFormat.simpleCurrency(locale: 'pt_BR');
-    NumberFormat formatter = NumberFormat.simpleCurrency();
-    return formatter.format(value);
-  }
-
 }

@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackathon_cherry/widgets/imagem.dart';
-import 'package:imc_flutter/widgets/imagem.dart';
 
 class Carta {
   static Widget criar(modelo, marca) {

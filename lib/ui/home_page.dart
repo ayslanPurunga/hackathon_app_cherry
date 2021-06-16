@@ -24,15 +24,14 @@ class _HomePageState extends State<HomePage> {
     ];
 
     return Scaffold(
-      appBar: BarraTitulo.criar("UmuChery Veículos", iconeAcao: Icons.directions_car_rounded),
-      drawer: BarraDrawer.criar(context, "UmuChery", Colors.red[300], Colors.white, lista_itens,
+      appBar: BarraTitulo.criar("Cherry Veículos"),
+      drawer: BarraDrawer.criar(context, "Cherry Veículos", Colors.red[900], Colors.white, lista_itens,
         iconeTitulo: Icons.directions_car_outlined,),
       backgroundColor: Colors.grey[100],
       body: Column(
         children: <Widget>[
           Expanded(
             child: FutureBuilder(
-              // future: Funcoes.getListaJson("https://run.mocky.io/v3/55e72764-1835-4ebf-a112-965e835590bf"),
               future: Funcoes.getListaJson("http://192.168.1.102:3000/api/v1/veiculos"),
               builder: (context, snapshot) {
                 switch(snapshot.connectionState) {
