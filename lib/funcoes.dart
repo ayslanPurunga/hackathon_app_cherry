@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:intl/intl.dart';
+
 class Funcoes {
   static const LISTA_VEICULOS = 1;
   static const LISTA_NOVOS = 2;
@@ -50,5 +52,11 @@ class Funcoes {
     http.Response response = await http.get(uri);
     return json.decode(response.body);
 
+  }
+
+  static String getCurrency(value) {
+    NumberFormat.simpleCurrency(locale: 'pt_BR');
+    NumberFormat formatter = NumberFormat.simpleCurrency();
+    return formatter.format(value);
   }
 }
