@@ -48,12 +48,13 @@ class ListaDadosCarro {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(dados["modelo"].toString(), style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-              Text(dados["marca"].toString()),
-              Text(dados["anofabricacao"].toString() + "/" + dados["anomodelo"]),
-              Text(Funcoes.getCurrency(dados["valor"])),
+              Text(dados["marca"].toString(), style: TextStyle(fontSize: 16)),
+              Text(dados["anofabricacao"].toString() + "/" + dados["anomodelo"], style: TextStyle(fontSize: 16)),
+              Text(dados["tipo"].toString(), style: TextStyle(fontSize: 16)),
+              Text(Funcoes.getCurrency(dados["valor"]), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.red)),
             ],
           ),
         )

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_cherry/widgets/circulo_aguarde.dart';
 import 'package:hackathon_cherry/widgets/lista_dados.dart';
 import 'package:hackathon_cherry/widgets/imagem.dart';
 import 'package:hackathon_cherry/widgets/barra_titulo.dart';
@@ -10,30 +11,24 @@ class NovoPage extends StatefulWidget {
 }
 
 class _NovoPageState extends State<NovoPage> {
+
+  final URL_API = "http://192.168.1.102:3000/api/v1/veiculos/novos";
+
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: BarraTitulo.criar("Carros Novos", iconeAcao: Icons.directions_car_outlined),
+      appBar: BarraTitulo.criar("Veículos Novos"),
       body: Column(
         children: <Widget>[
           Expanded(
             child: FutureBuilder(
-              future: Funcoes.getListaJson(
-                  "https://run.mocky.io/v3/e09d6cdb-3d7b-4e76-a908-accf8721049c"),
+              future: Funcoes.getListaJson(URL_API),
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.waiting:
                   case ConnectionState.none:
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Imagem.criarImagemWeb("images/", w: 300),
-                          Text("Aguarde por favor!"),
-                        ],
-                      ),
-                    );
+                    return CirculoAguarde.criar();
                   default:
                     if (snapshot.hasError)
                       return Center(

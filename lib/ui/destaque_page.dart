@@ -24,13 +24,13 @@ class DestaquePage extends StatelessWidget {
                       padding: EdgeInsets.all(10.0),
                       child: Column(
                         children: [
-                          Text(dadosCarro["modelo"].toString(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          Text(dadosCarro["modelo"].toString(), style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                           ),
                           Text(dadosCarro["marca"].toString(), style: TextStyle(fontSize: 20)),
                           Text(dadosCarro["anomodelo"].toString() + "/"+ dadosCarro["anofabricacao"].toString() + " " + dadosCarro["cor"].toString(), style: TextStyle(fontSize: 18, color: Color(0xFF57606f))),
-                          Text(dadosCarro["tipo"].toString(), style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                          Text(dadosCarro["tipo"].toString(), style: TextStyle(fontSize: 18)),
                           Text(
-                            Funcoes.getCurrency(dadosCarro["valor"]), style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                            Funcoes.getCurrency(dadosCarro["valor"]), style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
                           ),
                         ],
                       ),
